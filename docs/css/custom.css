@@ -1,0 +1,33 @@
+/* Make content area full-width */
+.wy-nav-content {
+    max-width: 100% !important;
+}
+
+/* Remove gray background */
+.wy-nav-content-wrap {
+    background: white !important;
+}
+
+/* Optional: adjust padding for better layout */
+.wy-nav-content {
+    padding: 2rem !important;
+}
+
+/* Optional: tweak main body background */
+body, .wy-body-for-nav {
+    background: white !important;
+}
+
+
+/* === Image Styling for Documentation Header === */
+
+/* Make images centered and responsive */
+.md-typeset img {
+    display: inline;
+    margin: 1.5rem auto;
+    max-width: 10%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+

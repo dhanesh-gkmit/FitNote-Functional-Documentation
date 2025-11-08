@@ -1,0 +1,12 @@
+site_name: FitNote – Functional Documentation
+theme:
+  name: readthedocs
+
+extra_css:
+  - css/custom.css
+
+nav:
+  - Requiremnts & Objective: index.md
+  - Initial Workflow &Trainer Functionalities: trainer_functionalities.md
+  - Client Functionalities: client_functionalities.md
+  - System Flow,Edge Cases,Expected Outcome & Tech Stack: system_flow_and_outcome.md
