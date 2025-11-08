@@ -53,7 +53,11 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1-view-and-follow-assigned-schedules">1. View and Follow Assigned Schedules</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2save-and-send-the-workout-reports-to-mentor">2.Save and send the workout reports to mentor:</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2save-and-submit-workout-reports-to-mentor">2.Save and Submit Workout Reports to Mentor:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#flow-of-the-process">Flow of the process:</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#3-view-previous-workout-details">3. View Previous Workout Details</a>
     </li>
@@ -63,7 +67,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../system_flow_and_outcome/">System Flow & Expected Outcome & Tech Stack</a>
+                <li class="toctree-l1"><a class="reference internal" href="../system_flow_and_outcome/">System Flow,Edge Cases,Expected Outcome & Tech Stack</a>
                 </li>
               </ul>
       </div>
@@ -96,12 +100,81 @@
 <li>They just have to follow the schedule as mentioned in the template.</li>
 </ul>
 <hr />
-<h2 id="2save-and-send-the-workout-reports-to-mentor">2.Save and send the workout reports to mentor:</h2>
-<p><strong>Flow of the process:</strong></p>
+<h2 id="2save-and-submit-workout-reports-to-mentor">2.Save and Submit Workout Reports to Mentor:</h2>
+<h3 id="flow-of-the-process">Flow of the process:</h3>
 <p>
-  <img src="images/client-functionalities.png" alt="Client Functionality" width="750">
+  <img src="/images/cf.png" width="900">
 </p>
 
+<p>When the client fills out their daily report for each exercise, the following two fields are required:<br />
+1. <strong>Client’s attained weight or intensity</strong><br />
+2. <strong>Client’s attained reps</strong></p>
+<p>After completing the inputs, the client can <strong>save the report in the database</strong> and then <strong>send it to the mentor</strong> for review.</p>
+<p><strong>Example of Email Report Received by the Mentor</strong><br>
+<strong>Subject:</strong> <em>Ram’s Monday Workout Report</em>  </p>
+<p><strong>Hello Mentor,</strong><br />
+Please find below the daily workout report submitted by your client <strong>Ram</strong> for <strong>Monday, 10th Nov 2025</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Exercise Name</th>
+<th>Type</th>
+<th>Sets / Duration</th>
+<th>Suggested Weight / Intensity</th>
+<th>Reps Range</th>
+<th>Client’s Attained Weight / Intensity</th>
+<th>Client’s Attained Reps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bench Press</td>
+<td>Strength</td>
+<td>3 sets</td>
+<td>20kg / 25kg / 30kg</td>
+<td>10 / 8 / 6</td>
+<td>25kg / 30kg / 32kg</td>
+<td>10 / 8 / 6</td>
+</tr>
+<tr>
+<td>Squats</td>
+<td>Strength</td>
+<td>4 sets</td>
+<td>40kg / 45kg / 50kg</td>
+<td>12 / 10 / 8</td>
+<td>45kg / 50kg / 55kg</td>
+<td>12 / 10 / 8</td>
+</tr>
+<tr>
+<td>Shoulder Press</td>
+<td>Strength</td>
+<td>3 sets</td>
+<td>15kg / 20kg / 25kg</td>
+<td>10 / 10 / 8</td>
+<td>20kg / 25kg / 27kg</td>
+<td>10 / 10 / 8</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>Cardio</td>
+<td>30 mins</td>
+<td>Moderate pace</td>
+<td>—</td>
+<td>30 mins</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Rope Skipping</td>
+<td>Cardio</td>
+<td>3 × 30 sec</td>
+<td>High intensity</td>
+<td>—</td>
+<td>3 × 40 sec</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> The same report is going to be saved in the client's workout database.</p>
 <hr />
 <h2 id="3-view-previous-workout-details">3. View Previous Workout Details</h2>
 <ul>
@@ -120,7 +193,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../trainer_functionalities/" class="btn btn-neutral float-left" title="Initial Workflow &Trainer Functionalities"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../system_flow_and_outcome/" class="btn btn-neutral float-right" title="System Flow & Expected Outcome & Tech Stack">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../system_flow_and_outcome/" class="btn btn-neutral float-right" title="System Flow,Edge Cases,Expected Outcome & Tech Stack">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>

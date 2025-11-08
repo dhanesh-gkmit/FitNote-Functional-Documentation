@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>System Flow & Expected Outcome & Tech Stack - FitNote – Functional Documentation</title>
+    <title>System Flow,Edge Cases,Expected Outcome & Tech Stack - FitNote – Functional Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "System Flow \u0026 Expected Outcome \u0026 Tech Stack";
+        var mkdocs_page_name = "System Flow,Edge Cases,Expected Outcome \u0026 Tech Stack";
         var mkdocs_page_input_path = "system_flow_and_outcome.md";
         var mkdocs_page_url = null;
       </script>
@@ -53,10 +53,8 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">System Flow & Expected Outcome & Tech Stack</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">System Flow,Edge Cases,Expected Outcome & Tech Stack</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#trainer-flow-user-flow">Trainer Flow &amp; User Flow</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -74,7 +72,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">System Flow & Expected Outcome & Tech Stack</li>
+      <li class="breadcrumb-item active">System Flow,Edge Cases,Expected Outcome & Tech Stack</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -83,15 +81,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="system-flow-summary-expected-outcome">System Flow Summary &amp; Expected Outcome</h1>
-<h2 id="trainer-flow-user-flow">Trainer Flow &amp; User Flow</h2>
-<p><a href="https://mermaid.live/edit#pako:eNp1VF2PojAU_StNE_eJUcFvJtlkouvTmEzUmYeFyabKFZuFlpTiOEP479tSENHZPpDec-85vR-0Od7zALCLO52cMipdlPtYHiGGNyIo2UWQ-rgED5zJDf0Cbfp40E_OPraQwZckptGn8TwpWuTjoig6HZ-FgiRH9Lz2GVIrzXYG8PFWEMpAoGXEP3xs3Hpt13-eeUiZV37f0cPDT42tCCMhvKYg8rkAIqG34gE9fCINFY8tfhPbZm8hTiJFTdsSvQVEIAFd3N_KXby15lOa0pA1msburSHmp_-L3bBqsTXsgZ5gDQkXMvUqEy2IaiuqUHSiBEGsoPe2ZptcS5qqdBe8qkC9r6nAAp_dDaXs2e1EXjf3E1HYG4WPSx2etpApDoKm-utMbzm10JJGkck9fwFx4CJGv84g9jRVMUYSUYZkxUM_kGZUXSnaBzRatfom28VUGszbqLIrYtlN3UwkOZLmZ7zJ9ppay82PsP_7QlLplTuktygxaavC0yMEWdTUfdXm7wTvhvdYRmMLh4IG2D2QKAULxyBUpsrGudaqLqi5bjuSgp5WoUgJYb85j7ErRaZogmfh8SKSJYHq3oISNewmRCUIYs4zJrFrT0oJ7Ob4jF1n0h2PBrOZM3SmU3vSt8cW_tRBw27fGdnjiT2cziYTu7DwV3lovzsdjuyBMxw7o6ndH40HFoaASi5W5okpX5riH6I0doM"><img alt="" src="https://mermaid.ink/img/pako:eNp1VF2PojAU_StNE_eJUcFvJtlkouvTmEzUmYeFyabKFZuFlpTiOEP479tSENHZPpDec-85vR-0Od7zALCLO52cMipdlPtYHiGGNyIo2UWQ-rgED5zJDf0Cbfp40E_OPraQwZckptGn8TwpWuTjoig6HZ-FgiRH9Lz2GVIrzXYG8PFWEMpAoGXEP3xs3Hpt13-eeUiZV37f0cPDT42tCCMhvKYg8rkAIqG34gE9fCINFY8tfhPbZm8hTiJFTdsSvQVEIAFd3N_KXby15lOa0pA1msburSHmp_-L3bBqsTXsgZ5gDQkXMvUqEy2IaiuqUHSiBEGsoPe2ZptcS5qqdBe8qkC9r6nAAp_dDaXs2e1EXjf3E1HYG4WPSx2etpApDoKm-utMbzm10JJGkck9fwFx4CJGv84g9jRVMUYSUYZkxUM_kGZUXSnaBzRatfom28VUGszbqLIrYtlN3UwkOZLmZ7zJ9ppay82PsP_7QlLplTuktygxaavC0yMEWdTUfdXm7wTvhvdYRmMLh4IG2D2QKAULxyBUpsrGudaqLqi5bjuSgp5WoUgJYb85j7ErRaZogmfh8SKSJYHq3oISNewmRCUIYs4zJrFrT0oJ7Ob4jF1n0h2PBrOZM3SmU3vSt8cW_tRBw27fGdnjiT2cziYTu7DwV3lovzsdjuyBMxw7o6ndH40HFoaASi5W5okpX5riH6I0doM?type=png" /></a></p>
+                <h2 id="app-workflow-diagrammatic-overview">App Workflow — Diagrammatic Overview</h2>
+<p>
+  <img src="/images/Apw.png" width="1200">
+</p>
+
+<hr />
+<h2 id="some-possible-edge-cases">Some Possible Edge Cases</h2>
+<h3 id="1-duplicate-client-credentials">1. Duplicate Client Credentials</h3>
+<ul>
+<li><strong>Issue:</strong> Mentor tries to create a new client with an already existing username or password.  </li>
+<li><strong>Solution:</strong> Add backend validation to check for existing username and password before saving a new client.</li>
+</ul>
+<h3 id="2-multiple-report-submissions-for-same-day">2. Multiple Report Submissions for Same Day</h3>
+<ul>
+<li><strong>Issue:</strong> Client edits a previous report and resends it, generating multiple unnecessary emails to the mentor.  </li>
+<li><strong>Solution:</strong> Allow only one report submission for assigned schedule. Disable editing after saving reports in database.</li>
+</ul>
+<h3 id="3-missing-required-fields">3. Missing Required Fields</h3>
+<ul>
+<li><strong>Issue:</strong> Client tries to save a report without filling required details (weight, reps, etc.).  </li>
+<li><strong>Solution:</strong> Enforce frontend + backend validation; mark critical fields as <code>required</code> and return clear error messages.</li>
+</ul>
+<h3 id="4-empty-report-submission">4. Empty Report Submission</h3>
+<ul>
+<li><strong>Issue:</strong> Client attempts to send an empty report to the mentor.  </li>
+<li><strong>Solution:</strong> The workflow is designed so that the report must be saved in the database before it can be mailed to the mentor. Database-level validations ensure that no empty fields are allowed while saving the report.</li>
+</ul>
+<h3 id="5-if-client-forgot-to-send-the-report">5. If Client Forgot to Send the Report</h3>
+<ul>
+<li><strong>Issue:</strong> The client forgot to send the report of the previous day and wants to send it to the mentor now.  </li>
+<li><strong>Solution:</strong> If the client has saved the report of that schedule in the database but forgot to send it, then he/she has to go to the <strong>Previous Workout</strong> section. From there, they can send the report of that schedule to the mentor.</li>
+</ul>
 <hr />
 <h1 id="tech-stack">Tech Stack</h1>
 <p>The project is built using a simple and powerful tech stack suitable for real deployment.</p>
 <h2 id="mern-stack">MERN Stack</h2>
 <ul>
-<li><strong>MongoDB</strong> – Database for storing users, workouts, reports.</li>
+<li><strong>MongoDB</strong> – Database for storing users, workouts, Diet.</li>
 <li><strong>Express.js</strong> – Backend API framework.</li>
 <li><strong>React.js</strong> – Frontend UI framework.</li>
 <li><strong>Node.js</strong> – Server runtime.</li>
@@ -114,7 +141,6 @@
 <ul>
 <li>Trainers can manage all clients digitally from one dashboard.  </li>
 <li>Users follow structured routines with historical records.  </li>
-<li>Communication gap between trainer and user is eliminated.  </li>
 <li>Exercise progress and personal records are tracked visually.  </li>
 <li>Gym management becomes efficient, data-driven, and paper-free.</li>
 </ul>
