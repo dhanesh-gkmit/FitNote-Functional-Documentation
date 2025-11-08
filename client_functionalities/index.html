@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Client Functionalities - FitNote – Functional Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Client Functionalities";
+        var mkdocs_page_input_path = "client_functionalities.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> FitNote – Functional Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Requiremnts & Objective</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../trainer_functionalities/">Initial Workflow &Trainer Functionalities</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Client Functionalities</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-view-and-follow-assigned-schedules">1. View and Follow Assigned Schedules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2save-and-submit-workout-reports-to-mentor">2.Save and Submit Workout Reports to Mentor:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#flow-of-the-process">Flow of the process:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-view-previous-workout-details">3. View Previous Workout Details</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-edit-profile">4. Edit Profile</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_flow_and_outcome/">System Flow,Edge Cases,Expected Outcome & Tech Stack</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">FitNote – Functional Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Client Functionalities</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="client-functionalities">Client Functionalities</h1>
+<h2 id="1-view-and-follow-assigned-schedules">1. View and Follow Assigned Schedules</h2>
+<ul>
+<li>Clients can view their complete weekly schedule, which includes workout and diet templates for each day assigned to them by their mentor.  </li>
+<li>They just have to follow the schedule as mentioned in the template.</li>
+</ul>
+<hr />
+<h2 id="2save-and-submit-workout-reports-to-mentor">2.Save and Submit Workout Reports to Mentor:</h2>
+<h3 id="flow-of-the-process">Flow of the process:</h3>
+<p>
+  <img src="/images/cf.png" width="900">
+</p>
+
+<p>When the client fills out their daily report for each exercise, the following two fields are required:<br />
+1. <strong>Client’s attained weight or intensity</strong><br />
+2. <strong>Client’s attained reps</strong></p>
+<p>After completing the inputs, the client can <strong>save the report in the database</strong> and then <strong>send it to the mentor</strong> for review.</p>
+<p><strong>Example of Email Report Received by the Mentor</strong><br>
+<strong>Subject:</strong> <em>Ram’s Monday Workout Report</em>  </p>
+<p><strong>Hello Mentor,</strong><br />
+Please find below the daily workout report submitted by your client <strong>Ram</strong> for <strong>Monday, 10th Nov 2025</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Exercise Name</th>
+<th>Type</th>
+<th>Sets / Duration</th>
+<th>Suggested Weight / Intensity</th>
+<th>Reps Range</th>
+<th>Client’s Attained Weight / Intensity</th>
+<th>Client’s Attained Reps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bench Press</td>
+<td>Strength</td>
+<td>3 sets</td>
+<td>20kg / 25kg / 30kg</td>
+<td>10 / 8 / 6</td>
+<td>25kg / 30kg / 32kg</td>
+<td>10 / 8 / 6</td>
+</tr>
+<tr>
+<td>Squats</td>
+<td>Strength</td>
+<td>4 sets</td>
+<td>40kg / 45kg / 50kg</td>
+<td>12 / 10 / 8</td>
+<td>45kg / 50kg / 55kg</td>
+<td>12 / 10 / 8</td>
+</tr>
+<tr>
+<td>Shoulder Press</td>
+<td>Strength</td>
+<td>3 sets</td>
+<td>15kg / 20kg / 25kg</td>
+<td>10 / 10 / 8</td>
+<td>20kg / 25kg / 27kg</td>
+<td>10 / 10 / 8</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>Cardio</td>
+<td>30 mins</td>
+<td>Moderate pace</td>
+<td>—</td>
+<td>30 mins</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Rope Skipping</td>
+<td>Cardio</td>
+<td>3 × 30 sec</td>
+<td>High intensity</td>
+<td>—</td>
+<td>3 × 40 sec</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> The same report is going to be saved in the client's workout database.</p>
+<hr />
+<h2 id="3-view-previous-workout-details">3. View Previous Workout Details</h2>
+<ul>
+<li>Clients can <strong>access all past reports</strong> date-wise.  </li>
+<li>They can view the exact exercises, sets, weights, and reps for strength exercises, and the duration and intensity for cardio exercises completed on any past day.  </li>
+<li>This helps them review their workout history and track their consistency over time.</li>
+</ul>
+<hr />
+<h2 id="4-edit-profile">4. Edit Profile</h2>
+<ul>
+<li>Update personal details: <strong>name, age, height, weight</strong>.</li>
+</ul>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../trainer_functionalities/" class="btn btn-neutral float-left" title="Initial Workflow &Trainer Functionalities"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../system_flow_and_outcome/" class="btn btn-neutral float-right" title="System Flow,Edge Cases,Expected Outcome & Tech Stack">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../trainer_functionalities/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../system_flow_and_outcome/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

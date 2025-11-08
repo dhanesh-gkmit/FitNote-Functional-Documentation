@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Initial Workflow &Trainer Functionalities - FitNote – Functional Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Initial Workflow \u0026Trainer Functionalities";
+        var mkdocs_page_input_path = "trainer_functionalities.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> FitNote – Functional Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Requiremnts & Objective</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Initial Workflow &Trainer Functionalities</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../client_functionalities/">Client Functionalities</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_flow_and_outcome/">System Flow,Edge Cases,Expected Outcome & Tech Stack</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">FitNote – Functional Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Initial Workflow &Trainer Functionalities</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="initial-workflow">Initial Workflow</h2>
+<p>Before using the application, the journey typically begins when a <strong>client</strong> approaches a <strong>mentor/trainer</strong> through social media, a phone call, or any other communication channel seeking fitness guidance.</p>
+<p>Once both agree to start, the <strong>mentor</strong> creates a new account for the client by generating a <strong>unique username and password</strong>.<br />
+These credentials are shared with the client, who can then <strong>log in</strong> to the system and access their personalized dashboard.</p>
+<p>If the client ever forgets their credentials, the mentor has full authority to <strong>reset</strong> or <strong>regenerate</strong> a new username and password for that same client.</p>
+<p>This setup ensures:
+- A controlled onboarding process (mentor-approved accounts only)<br />
+- Secure access for each client<br />
+- Easy recovery for lost credentials</p>
+<h1 id="trainer-functionalities">Trainer Functionalities:</h1>
+<h2 id="1-client-management">1. Client Management</h2>
+<ul>
+<li><strong>Add new client</strong> with a username and password.  </li>
+<li><strong>Edit user details</strong> when needed (like usernname or password).  </li>
+<li><strong>View all client</strong> with full info – their profile, assigned workouts, and past workouts.  </li>
+<li><strong>Delete client</strong> if they stop mentorship.  </li>
+</ul>
+<hr />
+<h2 id="2-create-assign-manage-templates">2. Create, Assign &amp; Manage Templates</h2>
+<p>Templates are <strong>structured schedules</strong> for both workouts and diet plans.<br />
+They help trainers maintain consistency, save time, and ensure every client follows a personalized plan suited to their goals.</p>
+<h3 id="how-it-works">How it works</h3>
+<p>When a new client joins who dont have knowladge about the the workout splits &amp; diet, the trainer usually starts with a <strong>beginner-level template</strong>.<br />
+As the client progresses or introduces new requirements (like muscle gain, fat loss, or injury recovery), the trainer can <strong>update or switch</strong> them to a different template — ensuring the plan always aligns with their fitness stage.</p>
+<h3 id="functionalities">Functionalities</h3>
+<ul>
+<li><strong>Create:</strong> Build workout or diet templates based on daily or monthly routines of client.  </li>
+<li><strong>Assign:</strong> Apply a template to one or multiple clients simultaneously.  </li>
+<li><strong>Edit:</strong> Modify exercises, meal items, or schedules whenever needed.  </li>
+<li><strong>Remove Client:</strong> Detach a specific client from a template.  </li>
+<li><strong>Delete:</strong> Remove unnecessary templates to keep the system clean.</li>
+</ul>
+<h4 id="training-templates">Training Templates:</h4>
+<h4 id="1workout-template">1.Workout Template</h4>
+<p><strong>Used for:</strong> Both strength (resistance) and cardio exercises — allowing trainers to plan a complete workout routine in one place.</p>
+<p>Each workout day can include a mix of:<br>
+- <strong>Strength exercises:</strong> These involve lifting weights and are used to build muscle.<br>
+- <strong>Cardio exercises:</strong> These improve cardiovascular health, stamina, and endurance (e.g., running, cycling).</p>
+<p><strong>Includes:</strong><br />
+- Exercise name<br />
+- Type (e.g. Strength / Cardio)<br />
+- Sets or duration where sets are for the strength exercises and duration is for the cardio exercises.<br>
+- Suggested weight or intensity<br />
+- Reps (for strength exercises)</p>
+<p><strong>Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Exercise Name</th>
+<th>Type</th>
+<th>Sets / Duration</th>
+<th>Suggested Weight / Intensity</th>
+<th>Reps Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bench Press</td>
+<td>Strength</td>
+<td>3 sets</td>
+<td>20kg / 25kg / 30kg</td>
+<td>10 / 8 / 6</td>
+</tr>
+<tr>
+<td>Squats</td>
+<td>Strength</td>
+<td>4 sets</td>
+<td>40kg / 45kg / 50kg</td>
+<td>12 / 10 / 8</td>
+</tr>
+<tr>
+<td>Shoulder Press</td>
+<td>Strength</td>
+<td>3 sets</td>
+<td>15kg / 20kg / 25kg</td>
+<td>10 / 10 / 8</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>Cardio</td>
+<td>30 mins</td>
+<td>Moderate pace</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Rope Skipping</td>
+<td>Cardio</td>
+<td>3 × 30 sec</td>
+<td>High intensity</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2diet-template">2.Diet Template</h4>
+<p><strong>Used for:</strong> Planning meals and timings.  </p>
+<p><strong>Includes:</strong><br />
+- Meal number<br />
+- Food items with quantity<br />
+- Message or time gap after the meal  </p>
+<p><strong>Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Meal No.</th>
+<th>Food Items &amp; Quantity</th>
+<th>Message / Gap After Meal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meal 1</td>
+<td>Oats + Banana</td>
+<td>Wait 2 hrs before next meal</td>
+</tr>
+<tr>
+<td>Meal 2</td>
+<td>Brown Rice</td>
+<td>Light walk after meal</td>
+</tr>
+<tr>
+<td>Meal 3</td>
+<td>Paneer + Salad</td>
+<td>Wait 3 hrs before next meal</td>
+</tr>
+<tr>
+<td>Meal 4</td>
+<td>Oats + Milk</td>
+<td>No food after this meal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-report-handling">3. Report Handling</h2>
+<ul>
+<li>Trainers get daily progress reports of the assigned schedule from clients via email.  </li>
+<li>Trainers can also receive reports for past workout and cardio sessions of the client if the client forgot to send them or was not able to send them on time.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Requiremnts & Objective"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../client_functionalities/" class="btn btn-neutral float-right" title="Client Functionalities">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../client_functionalities/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
