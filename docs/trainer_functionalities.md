@@ -29,7 +29,7 @@ Templates are **structured schedules** for both workouts and diet plans.
 They help trainers maintain consistency, save time, and ensure every client follows a personalized plan suited to their goals.
 
 ### How it works
-When a new client joins who dont have knowladge about the the workout splits & diet, the trainer usually starts with a **beginner-level template**.  
+When a new client joins without workout or diet knowledg, the trainer usually starts with a **beginner-level template**.  
 As the client progresses or introduces new requirements (like muscle gain, fat loss, or injury recovery), the trainer can **update or switch** them to a different template — ensuring the plan always aligns with their fitness stage.
 
 ### Functionalities
@@ -64,19 +64,21 @@ As the client progresses or introduces new requirements (like muscle gain, fat l
 **Used for:** Planning meals and timings.  
 
 **Includes:**  
-- Meal number  
-- Food items with quantity  
-- Message or time gap after the meal  
+- Food item  
+- Quantity  
+- Time  
 
 **Example:**
 
-| Meal No. | Food Items & Quantity | Message / Gap After Meal |
-|-----------|----------------------|---------------------------|
-| Meal 1 | Oats + Banana | Wait 2 hrs before next meal |
-| Meal 2 | Brown Rice| Light walk after meal |
-| Meal 3 | Paneer + Salad | Wait 3 hrs before next meal |
-| Meal 4 | Oats + Milk | No food after this meal |
-
+| Food Item | Quantity | Time |
+|------------|-----------|-------|
+| Oats | 1 Bowl | 6:00 AM |
+| Banana | 1 Piece | 6:00 AM |
+| Brown Rice | 1 Plate | 9:00 AM |
+| Paneer | 100g | 12:30 PM |
+| Salad | 1 Bowl | 12:30 PM |
+| Oats | 1 Bowl | 7:00 PM |
+| Milk | 1 Glass | 7:00 PM |
 
 ---
 

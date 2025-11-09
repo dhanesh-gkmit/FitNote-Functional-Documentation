@@ -13,7 +13,7 @@
 
 When the client fills out their daily report for each exercise, the following two fields are required:  
 1. **Client’s attained weight**  
-2. **Client’s attained reps**
+2. **Client’s attained reps**. 
 
 After completing the inputs, the client can **save the report in the database** and then **send it to the mentor** for review.
 
