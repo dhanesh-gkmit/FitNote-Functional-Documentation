@@ -7,7 +7,7 @@
 ## 2. Save and Submit Workout Reports to Mentor
 ### Flow of the Process
 
-![client flow](../images/cf.png)
+![client flow](images/Client_functionalities.png){ width=900 }
 
 When the client fills out their daily report for each exercise, the following two fields are required:  
 1. **Client’s attained weight**  

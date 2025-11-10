@@ -1,4 +1,4 @@
-# ![FitNote Logo](images/fitNote-overview.png){ style="height:40px;vertical-align:middle;border-radius:8px;" } — Functional Documentation
+# ![FitNote Logo](images/FitNote_logo.png){ style="height:40px;vertical-align:middle;border-radius:8px;" } — Functional Documentation
 
 
 ## Project Overview

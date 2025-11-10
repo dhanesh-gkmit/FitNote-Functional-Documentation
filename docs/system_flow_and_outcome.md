@@ -1,6 +1,6 @@
 ## App Workflow — Diagrammatic Overview
 
-![System Flow](images/Apw.png){ width="1200" }
+![System Flow](images/App_workflow.png){ width="1000" }
 ---
 
 ## Some Possible Edge Cases

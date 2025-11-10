@@ -5,7 +5,9 @@ Before using the application, the journey typically begins when a **client** app
 Once both agree to start, the **mentor** creates a new account for the client by generating a **unique username and password**.  
 These credentials are shared with the client, who can then **log in** to the system and access their personalized dashboard.
 
-If the client ever forgets their credentials, the mentor has full authority to verify and provide the login details again
+If the client ever forgets their credentials, the mentor has full authority to verify and provide the login details again.
+
+![client onboarding](images/Client_Onboarding.png){ width=700 }
 
 This setup ensures:
 - A controlled onboarding process (mentor-approved accounts only)  
