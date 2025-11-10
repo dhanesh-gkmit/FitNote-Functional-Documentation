@@ -5,7 +5,7 @@ Before using the application, the journey typically begins when a **client** app
 Once both agree to start, the **mentor** creates a new account for the client by generating a **unique username and password**.  
 These credentials are shared with the client, who can then **log in** to the system and access their personalized dashboard.
 
-If the client ever forgets their credentials, the mentor has full authority to check the client credetials and provide to them 
+If the client ever forgets their credentials, the mentor has full authority to verify and provide the login details again
 
 This setup ensures:
 - A controlled onboarding process (mentor-approved accounts only)  
@@ -16,9 +16,8 @@ This setup ensures:
 
 ## 1. Client Management
 
-- **Add new client** with a username and password.  
-- **Edit user details** when needed (like usernname or password).  
-- **View all client** with full info – their profile, assigned workouts, and past workouts.  
+- **Add new client** with a username and password.   
+- **View all clients** with full info – their profile, assigned workouts,login credentials and past workouts.
 - **Delete client** if they stop mentorship.  
 
 ---
@@ -29,7 +28,7 @@ Templates are **structured schedules** for both workouts and diet plans.
 They help trainers maintain consistency, save time, and ensure every client follows a personalized plan suited to their goals.
 
 ### How it works
-When a new client joins without workout or diet knowledg, the trainer usually starts with a **beginner-level template**.  
+When a new client joins without workout or diet knowledge, the trainer usually starts with a **beginner-level template**.  
 As the client progresses or introduces new requirements (like muscle gain, fat loss, or injury recovery), the trainer can **update or switch** them to a different template — ensuring the plan always aligns with their fitness stage.
 
 ### Functionalities
@@ -59,7 +58,7 @@ As the client progresses or introduces new requirements (like muscle gain, fat l
 | Squats         | 4 sets           | 40kg / 45kg / 50kg | 12 / 10 / 8 |
 | Shoulder Press | 3 sets           | 15kg / 20kg / 25kg | 10 / 10 / 8 |
 
-#### 2.Diet Template
+#### 2. Diet Template
 
 **Used for:** Planning meals and timings.  
 
@@ -85,5 +84,5 @@ As the client progresses or introduces new requirements (like muscle gain, fat l
 ## 3. Report Handling
 
 - Trainers get daily progress reports of the assigned schedule from clients via email.  
-- Trainers can also receive reports for past workout sessions of the client if the client forgot to send them or was not able to send them on time.
+- Trainers can also receive reports for past workout sessions of the client if the client forgot to send them or wasn't able to send them on time.
 

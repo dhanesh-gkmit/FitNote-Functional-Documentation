@@ -24,7 +24,7 @@
 ### 5. If Client Forgot to Send the Report
 
 - **Issue:** The client forgot to send the report of the previous day and wants to send it to the mentor now.  
-- **Solution:** If the client has saved the report of that schedule in the database but forgot to send it, then he/she has to go to the **Previous Workout** section. From there, they can send the report of that schedule to the mentor.
+- **Solution:** If the client has saved the report of that schedule in the database but forgot to send it, then they ca go to the **Previous Workout** section. From there, they can send the report of that schedule to the mentor.
 
 
 
@@ -54,7 +54,7 @@ The project is built using a simple and powerful tech stack suitable for real de
 
 ## Expected Outcome
 - Trainers can manage all clients digitally from one dashboard.  
-- Users follow structured routines with historical records.  
+- Client follow structured routines with historical records.  
 - Exercise progress and personal records are tracked visually.  
 - Gym management becomes efficient, data-driven, and paper-free.
 

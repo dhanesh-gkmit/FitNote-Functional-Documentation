@@ -35,11 +35,12 @@ Please find below the daily workout report submitted by your client **Ram** for 
 - Clients can **access all past reports** date-wise.  
 - They can view the exact exercises, sets, weights, and reps for strength exercises completed on any past day.  
 - This helps them review their workout history and track their consistency over time.
- 
+
 ---
 
 ## 4. Edit Profile
 - Update personal details: **name, age, height, weight**.
+- where Age and weight are essential details for the trainer to consider when creating or assigning personalized workout plans.
 
 ---
 

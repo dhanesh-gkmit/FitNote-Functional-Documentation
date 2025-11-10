@@ -3,8 +3,8 @@
 
 ## Project Overview
 
-FitNote is a fitness tracking and management web application designed for gym goers and personal trainer.
-It provides a digital solution for tracking workouts and diet plans for both fitness mentors who train their clients and for the clients themselves who are taking metorship.
+FitNote is a fitness tracking and management web application designed for gym-goers and personal trainer.
+It provides a digital solution for tracking workouts and diet plans for both fitness mentors who train their clients and for the clients themselves who are taking mentorship.
 This application is designed for a **single trainer managing multiple clients**, providing a centralized system to organize, assign, the workout and diet schedules.
 ---
 
@@ -23,30 +23,18 @@ This application is designed for a **single trainer managing multiple clients**,
 ---
 
 ## Solution
-A single online platfrom where :
+A single online platform where :
 
 - **Fitness Mentor**
 
-    - can assign workouts shedule's to clients.
+    - can assign workouts schedule's to clients.
     - can monitor progress by reviewing past workout data and daily performance reports  
 
 - **Clients**
    
-    - can can see the workouts assigned to them.  
+    - can see the workouts assigned to them.  
     - can track all their past workout schedules and progress.
 
-## Solution
-A single online platfrom where :
-
-- **Fitness Mentor**
-
-    - can assign workouts shedule's to clients.
-    - can monitor progress by reviewing past workout data and daily performance reports  
-
-- **Clients**
-   
-    - can can see the workouts assigned to them.  
-    - can track all their past workout schedules and progress.
 
 
 
