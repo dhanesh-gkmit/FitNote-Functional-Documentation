@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>ErDiagram & Database Schema - FitNote – Functional Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/custom.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ErDiagram \u0026 Database Schema";
+        var mkdocs_page_input_path = "erdiagram_and_database_schema.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> FitNote – Functional Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Requiremnts & Objective</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../trainer_functionalities/">Client Onboarding & Trainer Functionalities</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../client_functionalities/">Client Functionalities</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../system_flow_and_outcome/">System Flow,Edge Cases,Expected Outcome & Tech Stack</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">ErDiagram & Database Schema</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#entity-relationship-diagram">Entity Relationship Diagram</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-users-schema">1) Users Schema</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">FitNote – Functional Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">ErDiagram & Database Schema</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="database-architecture-fitness-training-application">Database Architecture – Fitness Training Application</h1>
+<p>This document explains the complete database architecture for the fitness training application using <strong>Mongoose/MongoDB</strong>.</p>
+<p>The system consists of four primary collections:</p>
+<ul>
+<li><code>User</code></li>
+<li><code>WeeklyWorkoutPlan</code></li>
+<li><code>Template</code> (for both workout and diet)</li>
+<li><code>Workout</code> (daily logs)</li>
+</ul>
+<hr />
+<h2 id="entity-relationship-diagram">Entity Relationship Diagram</h2>
+<p><img alt="ER Diagram" src="../images/Er_diagrams.png" width="1200" /></p>
+<hr />
+<h2 id="1-users-schema">1) Users Schema</h2>
+<pre><code class="language-javascript">const mongoose = require(&quot;mongoose&quot;);
+
+const userSchema = new mongoose.Schema(
+  {
+    username: { type: String, required: true, unique: true, trim: true },
+    password: { type: String, required: true },
+    name:     { type: String, required: true, trim: true },
+
+    role:     { type: String, enum: [&quot;trainer&quot;, &quot;client&quot;], required: true }, 
+
+    age:      { type: Number, min: 0 },
+    weight:   { type: Number, min: 0 }, 
+    height:   { type: Number, min: 0 },
+
+
+    trainerId: { type: mongoose.Schema.Types.ObjectId, ref: &quot;User&quot; },
+
+
+    weeklyWorkoutPlan: { type: mongoose.Schema.Types.ObjectId, ref: &quot;WeeklyWorkoutPlan&quot; },
+    dietPlan:          { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; }, 
+
+
+    workouts:          [{ type: mongoose.Schema.Types.ObjectId, ref: &quot;Workout&quot; }],
+
+    isActive:  { type: Boolean, default: true }
+  },
+  { timestamps: true } 
+);
+
+userSchema.index({ username: 1 }, { unique: true });
+
+module.exports = mongoose.model(&quot;User&quot;, userSchema);
+
+</code></pre>
+<p>2) Weekly Workout Plan Schema</p>
+<pre><code class="language-javascript">const mongoose = require(&quot;mongoose&quot;);
+
+const weeklyWorkoutPlanSchema = new mongoose.Schema(
+  {
+    mondayTemplate:    { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+    tuesdayTemplate:   { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+    wednesdayTemplate: { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+    thursdayTemplate:  { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+    fridayTemplate:    { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+    saturdayTemplate:  { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+    sundayTemplate:    { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; }
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model(&quot;WeeklyWorkoutPlan&quot;, weeklyWorkoutPlanSchema);
+</code></pre>
+<p>3) Templates Schema (Workout / Diet)</p>
+<pre><code class="language-javascript">For type: &quot;workout&quot;, use workoutItems.
+
+For type: &quot;diet&quot;, use dietItems.
+
+const mongoose = require(&quot;mongoose&quot;);
+
+const templateSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true, trim: true },
+
+    type: { type: String, enum: [&quot;workout&quot;, &quot;diet&quot;], required: true },
+
+    // Used when type === &quot;workout&quot;
+    workoutItems: [
+      {
+        exerciseName: { type: String, trim: true },
+        sets:         { type: Number, min: 0 },
+        weights:      [{ type: Number, min: 0 }],
+        repRange:     [{ type: Number, min: 0 }]
+      }
+    ],
+
+    // Used when type === &quot;diet&quot;
+    dietItems: [
+      {
+        meal:     { type: String, trim: true },
+        quantity: { type: String, trim: true },
+        timing:   { type: String, trim: true }
+      }
+    ],
+
+    createdBy: { type: mongoose.Schema.Types.ObjectId, ref: &quot;User&quot; }
+  },
+  { timestamps: true }
+);
+
+templateSchema.index({ name: 1, type: 1 });
+
+module.exports = mongoose.model(&quot;Template&quot;, templateSchema);
+</code></pre>
+<p>4) Workouts Schema (Daily Logs)</p>
+<pre><code class="language-javascript">const mongoose = require(&quot;mongoose&quot;);
+
+const workoutSchema = new mongoose.Schema(
+  {
+    userId:     { type: mongoose.Schema.Types.ObjectId, ref: &quot;User&quot;, required: true },
+    templateId: { type: mongoose.Schema.Types.ObjectId, ref: &quot;Template&quot; },
+
+    title:      { type: String, trim: true },
+
+    exercises: [
+      {
+        exerciseName:     { type: String, trim: true },
+
+        // Planned/expected targets
+        expectedSets:     { type: Number, min: 0 },
+        expectedWeight:   [{ type: Number, min: 0 }],
+        expectedRepRange: [{ type: Number, min: 0 }],
+
+        // Actual performance
+        attainedWeight:   [{ type: Number, min: 0 }],
+        attainedReps:     [{ type: Number, min: 0 }]
+      }
+    ],
+
+    performedDate: { type: Date },        // e.g., 2025-11-11
+    performedDay:  { type: String, trim: true }, // e.g., &quot;Tuesday&quot;
+
+    reportSent:    { type: Boolean, default: false }
+  },
+  { timestamps: true }
+);
+
+workoutSchema.index({ userId: 1, performedDate: -1 });
+
+module.exports = mongoose.model(&quot;Workout&quot;, workoutSchema);
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../system_flow_and_outcome/" class="btn btn-neutral float-left" title="System Flow,Edge Cases,Expected Outcome & Tech Stack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../system_flow_and_outcome/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
