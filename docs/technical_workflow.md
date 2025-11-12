@@ -147,28 +147,52 @@ Each part of the application — the frontend interface, backend services, and d
 
 ```mermaid
 flowchart TD
+    %% ---------------- LOGIN PROCESS ----------------
+    A0["User Submits Login Credentials"] --> B0["Backend Receives Credentials"]
 
-    A["User Submits Login Credentials"] --> B["Backend Receives Credentials"]
+    B0 --> C0{"Are Credentials Valid?"}
 
-    B --> C{"Are Credentials Valid?"}
-
-    C -- "NO" --> U1["401 Unauthorized
+    C0 -- "NO" --> U0["401 Unauthorized
     Invalid Username/Password"]
 
-    C -- "YES" --> D["Backend Generates JWT Token"]
+    C0 -- "YES" --> D0["Backend Generates Access + Refresh Tokens"]
 
-    D --> E["Frontend Stores Token
-    (localStorage)"]
+    D0 --> E0["Frontend Stores Access Token (localStorage)
+    and Refresh Token (HttpOnly Cookie)"]
 
-    E --> F["Frontend Sends Token
-    Authorization: Bearer <token>"]
+    E0 --> F0["Frontend Sends Access Token
+    Authorization: Bearer <access_token>"]
 
-    F --> G["Backend Verifies Token
-    (signature, expiry, issuer)"]
+    F0 --> G0["Backend Verifies Access Token
+    (Signature, Expiry, Issuer)"]
 
-    G -- "Invalid Token" --> U1
-    G -- "Valid Token" --> H["Backend Allows Access
-    Protected Route"]
+    G0 -- "Valid" --> H0["Backend Allows Access → Protected Route"]
+    G0 -- "Expired" --> I0["401 Access Token Expired"]
+
+    %% ---------------- TOKEN REFRESH FLOW ----------------
+    I0 --> J0["Frontend Detects 401 + 'Access token expired'
+    Calls /auth/refresh with Refresh Token"]
+
+    J0 --> K0["Backend Verifies Refresh Token"]
+
+    K0 -- "Invalid / Missing" --> U1["403 Forbidden
+    Invalid or Missing Refresh Token → Please Login Again"]
+
+    K0 -- "Valid" --> L0["Backend Generates New Access Token"]
+
+    L0 --> M0["Backend Sends New Access Token to Frontend"]
+
+    M0 --> N0["Frontend Updates Token in localStorage
+    and Retries Original Request"]
+
+    %% ---------------- STYLING ----------------
+    classDef frontend fill:#dbeafe,stroke:#3b82f6,stroke-width:1px;
+    classDef backend fill:#dcfce7,stroke:#16a34a,stroke-width:1px;
+    classDef error fill:#fee2e2,stroke:#ef4444,stroke-width:1px;
+
+    class A0,E0,F0,I0,J0,M0,N0 frontend;
+    class B0,C0,D0,G0,K0,L0,H0 backend;
+    class U0,U1 error;
 ```
 
 ---
@@ -178,28 +202,30 @@ flowchart TD
 ```mermaid
 flowchart TD
 
-    %% ---------------- FRONTEND UNAUTHORIZED ATTEMPT ----------------
-    A0["Client (User) tries to access protected route directly 
-    e.g., /dashboard or /dietplans"] --> B0{"Is valid token in localStorage?"}
+    %% ---------------- FRONTEND CHECK ----------------
+    A0["Client (User) Tries to Access Protected Route 
+    e.g., /dashboard or /workoutplans"] --> B0{"Is Access Token Present in localStorage?"}
 
-    B0 -- "NO" --> U0["Frontend blocks access → Redirect to /login
+    B0 -- "NO" --> U0["Frontend Redirects to /login
     Message: 'Unauthorized - Please Login'"]
 
-    B0 -- "YES" --> A["User API Request
-    e.g., /getWorkoutPlan"]
+    B0 -- "YES" --> A["User API Request 
+    e.g., /getWorkoutPlan (Bearer access token)"]
 
-    %% ---------------- BACKEND AUTHORIZATION FLOW ----------------
+    %% ---------------- BACKEND AUTH FLOW ----------------
     A --> B{"Is Authorization Header Present?"}
 
     B -- "NO" --> U1["401 Unauthorized
     Missing Authorization Header"]
 
-    B -- "YES" --> C["Verify JWT Token
+    B -- "YES" --> C["Verify JWT Access Token
     (Signature, Expiry, Issuer)"]
 
-    C -- "Invalid / Expired" --> U1
+    C -- "Invalid Token" --> U1
+    C -- "Expired Token" --> X["401 Access Token Expired → 
+    Frontend Triggers Refresh Token Flow"]
 
-    C -- "Valid" --> D["Extract userId, role, scopes
+    C -- "Valid Token" --> D["Extract userId, role, scopes 
     Attach to req.user"]
 
     D --> E{"Is the Route Protected?"}
@@ -207,23 +233,36 @@ flowchart TD
     E -- "NO" --> G["Controller Executes
     Request Allowed"]
 
-    E -- "YES" --> F{"Is User Role Authorized
+    E -- "YES" --> F{"Is User Role Authorized 
     to Access this Route?"}
 
-    F -- "NO" --> U2["403 Forbidden
+    F -- "NO" --> U2["403 Forbidden 
     User Lacks Permission"]
 
-    F -- "YES" --> G["Controller Executes
+    F -- "YES" --> G["Controller Executes 
     Success Response"]
+
+    %% ---------------- TOKEN REFRESH FLOW ----------------
+    X --> J["Frontend: POST /auth/refresh (sends refresh token cookie)"]
+
+    J --> K["Backend: Verify Refresh Token"]
+
+    K -- "Valid" --> L["Backend: Generate new Access Token"]
+    K -- "Invalid / Missing" --> U3["401 Unauthorized
+    Refresh invalid → Frontend redirects to /login"]
+
+    L --> M["Backend: Return new Access Token"]
+
+    M --> N["Frontend: Update access token and retry original request"]
 
 %% ------------------ STYLING ------------------
 classDef frontend fill:#dbeafe,stroke:#3b82f6,stroke-width:1px;
 classDef backend fill:#dcfce7,stroke:#16a34a,stroke-width:1px;
 classDef error fill:#fee2e2,stroke:#ef4444,stroke-width:1px;
 
-class A0,B0,U0 frontend;
-class A,B,C,D,E,F,G backend;
-class U1,U2,U0 error;
+class A0,B0,U0,X,J,M,N frontend;
+class A,B,C,D,E,F,G,K,L backend;
+class U1,U2,U3,U0 error;
 ```
 
 ---

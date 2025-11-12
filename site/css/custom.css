@@ -31,3 +31,29 @@ body, .wy-body-for-nav {
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* ✅ Center align Mermaid diagrams */
+.mermaid {
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+/* ✅ Center align all Markdown tables */
+.md-typeset table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ✅ Optional: make tables look cleaner */
+.md-typeset table th,
+.md-typeset table td {
+    text-align: left;
+    padding: 8px 12px;
+}
+
+.small-img {
+    height: 900px !important;
+    width: 1600px;
+}
+
+

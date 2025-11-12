@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Technical Workflow - FitNote – Functional Documentation</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="../css/custom.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Technical Workflow";
+        var mkdocs_page_input_path = "technical_workflow.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> FitNote – Functional Documentation
+        </a><div role="search">
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Requiremnts &amp; Objective</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../trainer_functionalities/">Client Onboarding &amp; Trainer Functionalities</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../client_functionalities/">Client Functionalities</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../system_flow_and_outcome/">System Flow,Edge Cases,Expected Outcome &amp; Tech Stack</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../erdiagram_and_database_schema/">ErDiagram</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Technical Workflow</a>
+<ul class="current">
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">FitNote – Functional Documentation</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Technical Workflow</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1>System Architecture</h1>
+<h2 id="overview">Overview</h2>
+<p>This system follows a modern, cloud-based full-stack architecture built for scalability, flexibility, and security.
+Each part of the application — the frontend interface, backend services, and database — works independently but connects seamlessly through secure REST APIs and automated CI/CD pipelines.<br/></p>
+<ul>
+<li><strong>Frontend</strong>: React.js (v19.2.0) <br/></li>
+<li><strong>Backend</strong>: Node.js (v20 LTS) + Express (v4.19) with <strong>JWT-based authentication</strong> <br/></li>
+<li><strong>Email Service</strong>: Nodemailer (v6.9) for transactional and notification emails <br/></li>
+<li><strong>Cloud Hosting</strong>: AWS EC2 instances for both frontend and backend deployment <br/></li>
+<li><strong>Database</strong>: MongoDB Atlas (v7.0) – fully managed NoSQL database <br/></li>
+<li><strong>Repositories</strong>: Separate GitHub repositories for frontend and backend codebases <br/></li>
+<li><strong>CI/CD Pipeline</strong>: Automated builds and deployments via <strong>GitHub Actions</strong> <br/></li>
+</ul>
+<h2 id="_1"><img alt="systemarchitecture" src="../images/System_architecture.png"/></h2>
+<h2 id="development-workflow">Development Workflow</h2>
+<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 320px; background: var(--md-default-bg-color); border: 1px solid #e0e0e0; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+<h3><b>Frontend Repository</b></h3>
+<ul>
+<li>Developed using <b>React.js</b></li>
+<li>Code changes are pushed to <b>GitHub</b></li>
+<li>Each commit triggers an automated <b>GitHub Actions</b> workflow</li>
+<li>GitHub Actions builds and deploys the frontend to the <b>AWS EC2</b> instance</li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 320px; background: var(--md-default-bg-color); border: 1px solid #e0e0e0; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+<h3><b>Backend Repository</b></h3>
+<ul>
+<li>Developed using <b>Node.js + Express</b></li>
+<li>Implements <b>JWT-based authentication</b> for secure access</li>
+<li>Code pushed to <b>GitHub</b> triggers GitHub Actions</li>
+<li>GitHub Actions automatically builds, tests, and deploys the backend to <b>AWS EC2</b></li>
+</ul>
+</div>
+</div>
+<hr/>
+<h2 id="deployment-architecture">Deployment Architecture</h2>
+<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 300px; background: var(--md-default-bg-color); border: 1px solid #e0e0e0; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+<h3><b>Frontend EC2 (React.js)</b></h3>
+<ul>
+<li>Serves the production build (HTML, CSS, JS) built with React.js</li>
+<li>Receives HTTP requests from user browsers</li>
+<li>Makes API calls to the Backend EC2 instance</li>
+<li>Receives API responses from the backend</li>
+<li>Renders the final UI and sends HTTP responses</li>
+<li>Update automatically via <b>GitHub Actions</b> CI/CD pipeline</li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 300px; background: var(--md-default-bg-color); border: 1px solid #e0e0e0; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+<h3><b>Backend EC2 (Node + Express)</b></h3>
+<ul>
+<li>Handles all API endpoints and routes</li>
+<li>Verifies <b>JWT tokens</b> for authentication</li>
+<li>Implements <b>Role-Based Protected Routes</b> — only authorized users can access restricted APIs</li>
+<li>Processes API requests and interacts with MongoDB Atlas</li>
+<li>Update and managed via <b>GitHub Actions</b> CI/CD</li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 300px; background: var(--md-default-bg-color); border: 1px solid #e0e0e0; border-radius: 10px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+<h3><b>MongoDB Atlas</b></h3>
+<ul>
+<li>Cloud-hosted NoSQL database</li>
+<li>Stores all user, workout, and authentication data</li>
+<li>Accessible only to the backend through secure connection strings</li>
+<li>Ensures data consistency and redundancy</li>
+</ul>
+</div>
+</div>
+<hr/>
+<h2 id="user-interaction-flow">User Interaction Flow</h2>
+<ol>
+<li>User opens the application in a browser  </li>
+<li>Browser sends HTTP request → Frontend EC2  </li>
+<li>The browser loads and displays the React app.</li>
+<li>React sends API requests → Backend EC2  </li>
+</ol>
+<hr/>
+<h2 id="system-communication-flow">System Communication Flow</h2>
+<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
+<div style="flex: 1; min-width: 300px; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px;">
+<h3><b>Frontend → Backend Communication</b></h3>
+<ul>
+<li>React sends API requests to the backend</li>
+<li>Backend processes and returns <b>JSON responses</b></li>
+<li>React updates the UI based on the response</li>
+</ul>
+</div>
+<div style="flex: 1; min-width: 300px; border: 1px solid #e0e0e0; border-radius: 10px; padding: 16px;">
+<h3><b>Backend → Database Communication</b></h3>
+<ul>
+<li>Backend API sends queries to <b>MongoDB Atlas</b></li>
+<li>Atlas returns data to the backend</li>
+<li>Backend processes data and sends it to the frontend</li>
+</ul>
+</div>
+</div>
+<hr/>
+<h2 id="system-workflow-summary">System Workflow Summary</h2>
+<ul>
+<li>Developer commits code → GitHub  </li>
+<li>GitHub Action trigger and deploy code to EC2  </li>
+<li>User → Browser → Frontend EC2  </li>
+<li>Frontend → Backend EC2 (API)  </li>
+<li>Backend → MongoDB Atlas  </li>
+<li>Backend → Frontend response  </li>
+<li>UI Appers</li>
+</ul>
+<hr/>
+<h2 id="authentication-jwt-flow">Authentication (JWT Flow)</h2>
+<div class="mermaid">flowchart TD
+
+    A["User Submits Login Credentials"] --&gt; B["Backend Receives Credentials"]
+
+    B --&gt; C{"Are Credentials Valid?"}
+
+    C -- "NO" --&gt; U1["401 Unauthorized
+    Invalid Username/Password"]
+
+    C -- "YES" --&gt; D["Backend Generates JWT Token"]
+
+    D --&gt; E["Frontend Stores Token
+    (localStorage)"]
+
+    E --&gt; F["Frontend Sends Token
+    Authorization: Bearer &lt;token&gt;"]
+
+    F --&gt; G["Backend Verifies Token
+    (signature, expiry, issuer)"]
+
+    G -- "Invalid Token" --&gt; U1
+    G -- "Valid Token" --&gt; H["Backend Allows Access
+    Protected Route"]
+</div>
+<hr/>
+<h2 id="authorization-role-based-access-control">Authorization (Role-Based Access Control)</h2>
+<div class="mermaid">flowchart TD
+
+    %% ---------------- FRONTEND UNAUTHORIZED ATTEMPT ----------------
+    A0["Client (User) tries to access protected route directly 
+    e.g., /dashboard or /dietplans"] --&gt; B0{"Is valid token in localStorage?"}
+
+    B0 -- "NO" --&gt; U0["Frontend blocks access → Redirect to /login
+    Message: 'Unauthorized - Please Login'"]
+
+    B0 -- "YES" --&gt; A["User API Request
+    e.g., /getWorkoutPlan"]
+
+    %% ---------------- BACKEND AUTHORIZATION FLOW ----------------
+    A --&gt; B{"Is Authorization Header Present?"}
+
+    B -- "NO" --&gt; U1["401 Unauthorized
+    Missing Authorization Header"]
+
+    B -- "YES" --&gt; C["Verify JWT Token
+    (Signature, Expiry, Issuer)"]
+
+    C -- "Invalid / Expired" --&gt; U1
+
+    C -- "Valid" --&gt; D["Extract userId, role, scopes
+    Attach to req.user"]
+
+    D --&gt; E{"Is the Route Protected?"}
+
+    E -- "NO" --&gt; G["Controller Executes
+    Request Allowed"]
+
+    E -- "YES" --&gt; F{"Is User Role Authorized
+    to Access this Route?"}
+
+    F -- "NO" --&gt; U2["403 Forbidden
+    User Lacks Permission"]
+
+    F -- "YES" --&gt; G["Controller Executes
+    Success Response"]
+
+%% ------------------ STYLING ------------------
+classDef frontend fill:#dbeafe,stroke:#3b82f6,stroke-width:1px;
+classDef backend fill:#dcfce7,stroke:#16a34a,stroke-width:1px;
+classDef error fill:#fee2e2,stroke:#ef4444,stroke-width:1px;
+
+class A0,B0,U0 frontend;
+class A,B,C,D,E,F,G backend;
+class U1,U2,U0 error;
+</div>
+<hr/>
+<h1 id="data-flow-diagrams-dfd">Data Flow Diagrams (DFD)</h1>
+<p>Below are the complete DFDs for the system (Level 0 and Level 1).  </p>
+<hr/>
+<h2 id="dfd-level-0-context-diagram">DFD – Level 0 (Context Diagram)</h2>
+<div class="mermaid">flowchart LR
+    %% --- External Entities &amp; Processes ---
+    User["User (Client)"]
+    Frontend[" React (Frontend EC2)"]
+    Backend[" Node/Express API (Backend EC2)"]
+    DB[" MongoDB Atlas"]
+
+    %% --- Data Flows ---
+    User --&gt;|"HTTP / HTTPS Requests"| Frontend
+    Frontend --&gt;|"API Requests"| Backend
+    Backend --&gt;|"DB Queries"| DB
+    DB --&gt;|"Query Results"| Backend
+    Backend --&gt;|"JSON Responses"| Frontend
+    Frontend --&gt;|"Rendered UI"| User
+</div>
+<hr/>
+<h2 id="dfd-level-1-authentication-protected-endpoints">DFD – Level 1 (Authentication + Protected Endpoints)</h2>
+<p><img alt="dfd1" src="../images/Dfd_l1.png" width="1300"/></p>
+<hr/>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../erdiagram_and_database_schema/" title="ErDiagram"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../erdiagram_and_database_schema/" style="color: #fcfcfc">« Previous</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

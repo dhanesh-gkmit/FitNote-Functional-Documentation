@@ -43,6 +43,7 @@ The project is built using a simple and powerful tech stack suitable for real de
 ## Version Control
 - **Git** – Version control for managing changes.
 - **GitHub** – Remote code repository for collaboration and backups.
+- **GitHub Actions** - For CI/CD workflow
 
 ## Cloud Hosting
 - **AWS EC2** – Cloud server used to deploy and run the production environment.
